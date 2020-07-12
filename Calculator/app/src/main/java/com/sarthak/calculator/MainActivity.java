@@ -47,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
         Button buttonDivide = findViewById(R.id.buttonDivide);
         Button buttonEquals = findViewById(R.id.buttonEqual);
 
+        /**
+         * Click listener for all number widgets.
+         * When a number button is pressed, then update the newEntry with the number value.
+         * All the no. buttons are defined by corresponding texts and can be fetched by button.getText() call.
+         */
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +72,13 @@ public class MainActivity extends AppCompatActivity {
         button9.setOnClickListener(listener);
         buttonDot.setOnClickListener(listener);
 
+        /**
+         * Click listener for all arithmetic button operators.
+         * When an arithmetic button is pressed, look for any pending entries in the newEntry field.
+         * If yes, then perform the operation with the newEntry and the result.Post that display the pending operation widget with the operator.
+         * If no, then just display the pending operation widget with the operator.
+         */
+
         View.OnClickListener opListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         Double doubleValue = Double.valueOf(value);
                         performOperation(doubleValue, op);
                     } catch (NumberFormatException n) {
+                        //This is to handle "." entry after an operator is entered.
                         newEntry.setText("");
                     }
                 }
@@ -91,6 +104,34 @@ public class MainActivity extends AppCompatActivity {
         buttonMultiply.setOnClickListener(opListener);
         buttonDivide.setOnClickListener(opListener);
         buttonEquals.setOnClickListener(opListener);
+
+        /**
+         * Click listener for all Negate button operators.
+         * When the negate button is pressed, then it should negate the newEntry widget pending value.
+         * If negate is pressed but there is no newEntry value, reset the newEntry widget to blank value.
+         * If negate is pressed on a "."or "-", reset the newEntry widget to blank value by catching number format exception.
+         */
+        Button buttonNeg = findViewById(R.id.buttonNeg);
+        buttonNeg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String value = newEntry.getText().toString();
+                if(value.length() == 0){
+                    newEntry.setText("");
+                } else {
+                    try{
+                        Double doubleValue = Double.valueOf(value);
+                        doubleValue *= -1;
+                        newEntry.setText(doubleValue.toString());
+                    } catch(NumberFormatException n){
+                        //if the value entered is "." or "-", clear the newEntry widget
+                        newEntry.setText("");
+                    }
+                }
+
+            }
+        });
+
     }
 
     @Override
