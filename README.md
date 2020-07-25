@@ -17,5 +17,10 @@
   **Screen:**  
   <img src="TopAppRecommender/screens/BasicList.PNG" width=250 height=500>  
   
+  ### Phase2:
+  In this phase I built a custom screen that beautifies the data being displayed. The main dev in this phase is to build a custom adapter that uses the [LayoutInflator](https://developer.android.com/reference/android/view/LayoutInflater) to load data from XML to views. Thee is also the usage of layout that is not the main/activity_main and how to set their reference in onPostExecute method.  
+  **Screen:**  
+  <img src="TopAppRecommender/screens/CustomisedList1.PNG" width=250 height=500>
+  
 `ReadMe Build to be completed`  
 <img src = "http://horticulture.tg.nic.in/img/work-in-progress-wip.jpg" width=200 height=200>
