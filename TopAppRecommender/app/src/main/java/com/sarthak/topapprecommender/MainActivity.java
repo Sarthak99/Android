@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         listApps = findViewById(R.id.xmlListView);
         Log.d(TAG, "onCreate: starting Async");
         DownloadData downloadData = new DownloadData();
-        downloadData.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml");
+        downloadData.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=200/xml");
         Log.d(TAG, "onCreate: done");
     }
 
@@ -41,9 +41,15 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "onPostExecute: parameter is " + s);
             ParseApplications parseApplications = new ParseApplications();
             parseApplications.parse(s);
-            ArrayAdapter<FeedEntry> arrayAdapter = new ArrayAdapter<>(
+           /*MMF-1
+           ArrayAdapter<FeedEntry> arrayAdapter = new ArrayAdapter<>(
                     MainActivity.this, R.layout.list_item, parseApplications.getApplications());
-            listApps.setAdapter(arrayAdapter);
+            listApps.setAdapter(arrayAdapter);*/
+
+           /*MMF-2*/
+            FeedAdapter feedAdapter = new FeedAdapter(MainActivity.this, R.layout.list_record,
+                    parseApplications.getApplications());
+            listApps.setAdapter(feedAdapter);
         }
 
         @Override
