@@ -39,19 +39,43 @@ public class FeedAdapter extends ArrayAdapter {
         TextView tvName = view.findViewById(R.id.tvName);
         TextView tvArtist = view.findViewById(R.id.tvArtist);
         TextView tvSummary = view.findViewById(R.id.tvSummary);*/
+        ViewHolder viewHolder;
 
-        if(convertView == null){
+        if (convertView == null) {
             convertView = layoutInflater.inflate(layoutResource, parent, false);
+
+            viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
         }
-        TextView tvName = convertView.findViewById(R.id.tvName);
+
+        /*TextView tvName = convertView.findViewById(R.id.tvName);
         TextView tvArtist = convertView.findViewById(R.id.tvArtist);
-        TextView tvSummary = convertView.findViewById(R.id.tvSummary);
+        TextView tvSummary = convertView.findViewById(R.id.tvSummary);*/
 
         FeedEntry currentRecord = applications.get(position);
-        tvName.setText(currentRecord.getName());
-        tvArtist.setText(currentRecord.getArtist());
-        tvSummary.setText(currentRecord.getSummary());
+        viewHolder.tvName.setText(currentRecord.getName());
+        viewHolder.tvArtist.setText(currentRecord.getArtist());
+        viewHolder.tvSummary.setText(currentRecord.getSummary());
 
         return convertView;
+    }
+
+    /**
+     * The ViewHolder class is an android recommended way to search for the TextViews in a ListView.
+     * As the TextViews in a ListView item remain the same, instead of finding them every time, initialize and reuse for every new view.
+     * This helps in efficiency of the execution. Albeit recommended, it is not enforced by android for ListView widget.
+     */
+    private class ViewHolder {
+        final TextView tvName;
+        final TextView tvArtist;
+        final TextView tvSummary;
+
+        ViewHolder(View v) {
+            this.tvName = v.findViewById(R.id.tvName);
+            this.tvArtist = v.findViewById(R.id.tvArtist);
+            this.tvSummary = v.findViewById(R.id.tvSummary);
+        }
     }
 }

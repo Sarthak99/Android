@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         listApps = findViewById(R.id.xmlListView);
         Log.d(TAG, "onCreate: starting Async");
         DownloadData downloadData = new DownloadData();
-        downloadData.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=200/xml");
+        downloadData.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=20/xml");
         Log.d(TAG, "onCreate: done");
     }
 
