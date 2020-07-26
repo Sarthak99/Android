@@ -4,7 +4,7 @@
   *PS: Project is built in java*  
   Some of the main features used in this project are:  
   * Accessing Internet over andorid  
-  * Understanding the protection levels of getting system feature accesses [permissions](https://developer.android.com/guide/topics/permissions/overview#normal-dangerous)  
+  * Understanding the protection levels of getting system feature accesses[(android permissions)](https://developer.android.com/guide/topics/permissions/overview#normal-dangerous).  
   
   **URL:** http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml  
   We use this downloaded XML data to display as a "list of Recommended Apps".
