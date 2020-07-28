@@ -4,8 +4,8 @@
   *PS: Project is built in java*  
   Some of the main features used in this project are:  
   * Accessing Internet over andorid.  
-  * Acitivity Lifecycle for restoring data on new activity.  
-  * Using custom generic adapters to link data source with views.
+  * [Acitivity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle) for restoring data on new activity.  
+  * Using custom generic [adapters](https://developer.android.com/reference/android/widget/Adapter) to link data source with views.
   * [ListViews](https://developer.android.com/reference/android/widget/ListView), [MenuItem and Menu groups](https://developer.android.com/guide/topics/ui/menus) items.  
   
   *DataSource*  
