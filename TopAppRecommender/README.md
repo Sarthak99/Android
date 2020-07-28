@@ -6,7 +6,7 @@
   * Accessing Internet over andorid.  
   * Acitivity Lifecycle for restoring data on new activity.  
   * Using custom generic adapters to link data source with views.
-  * ListViews, Menu and Menugroup items.  
+  * [ListViews](https://developer.android.com/reference/android/widget/ListView), [MenuItem and Menu groups](https://developer.android.com/guide/topics/ui/menus) items.  
   
   *DataSource*  
   **URL:** http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml  
