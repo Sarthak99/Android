@@ -8,7 +8,7 @@
   * Using custom generic [adapters](https://developer.android.com/reference/android/widget/Adapter) to link data source with views.
   * [ListViews](https://developer.android.com/reference/android/widget/ListView), [MenuItem and Menu groups](https://developer.android.com/guide/topics/ui/menus) items.  
   
-  *DataSource*  
+  <ins>*DataSource*</ins> 
   **URL:** [Apple RSS Feeds](http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml)  
   I have used this link to download XML data to display as a "list of Recommended Apps".
   
