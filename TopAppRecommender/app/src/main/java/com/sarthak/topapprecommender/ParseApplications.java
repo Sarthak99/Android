@@ -39,28 +39,28 @@ public class ParseApplications {
                 String tagName = xpp.getName();
                 switch (eventType) {
                     case XmlPullParser.START_TAG:
-                        Log.d(TAG, "parse: starting tag for:" + tagName);
+//                        Log.d(TAG, "parse: starting tag for:" + tagName);
                         if ("entry".equalsIgnoreCase(tagName)) {
                             inEntry = true;
                             currentRecord = new FeedEntry();
-                            Log.d(TAG, "parse: currentRecord initialized");
+//                            Log.d(TAG, "parse: currentRecord initialized");
                         }
                         break;
                     case XmlPullParser.TEXT:
                         textValue = xpp.getText();
                         break;
                     case XmlPullParser.END_TAG:
-                        Log.d(TAG, "parse: ending tag for: " + tagName);
+//                        Log.d(TAG, "parse: ending tag for: " + tagName);
                         if (inEntry) {
                             if ("entry".equalsIgnoreCase(tagName)) {
                                 applications.add(currentRecord);
                                 inEntry = false;
                             } else if ("name".equalsIgnoreCase(tagName)) {
                                 currentRecord.setName(textValue);
-                                Log.d(TAG, "parse: name:"+currentRecord.getName());
+//                                Log.d(TAG, "parse: name:"+currentRecord.getName());
                             } else if ("artist".equalsIgnoreCase(tagName)) {
                                 currentRecord.setArtist(textValue);
-                                Log.d(TAG, "parse: artist:"+currentRecord.getArtist());
+//                                Log.d(TAG, "parse: artist:"+currentRecord.getArtist());
                             } else if ("releaseDate".equalsIgnoreCase(tagName)) {
                                 currentRecord.setReleaseDate(textValue);
                             } else if ("summary".equalsIgnoreCase(tagName)) {
@@ -76,10 +76,10 @@ public class ParseApplications {
                 eventType = xpp.next();
             }
             
-            for(FeedEntry app : applications){
+            /*for(FeedEntry app : applications){
                 Log.d(TAG, "*************************");
                 Log.d(TAG, app.toString());
-            }
+            }*/
             
         } catch (Exception e) {
             status = false;
