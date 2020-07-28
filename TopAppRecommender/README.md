@@ -3,9 +3,12 @@
   This android project builds an app that subscribes and downloads XML data from a RSS feed.  
   *PS: Project is built in java*  
   Some of the main features used in this project are:  
-  * Accessing Internet over andorid  
-  * Understanding the protection levels of getting system feature accesses[(android permissions)](https://developer.android.com/guide/topics/permissions/overview#normal-dangerous).  
+  * Accessing Internet over andorid.  
+  * Acitivity Lifecycle for restoring data on new activity.  
+  * Using custom generic adapters to link data source with views.
+  * ListViews, Menu and Menugroup items.  
   
+  *DataSource*  
   **URL:** http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml  
   I have used this link to download XML data to display as a "list of Recommended Apps".
   
@@ -21,6 +24,9 @@
   **Screen:**  
   <img src="https://github.com/Sarthak99/Android/blob/master/TopAppRecommender/screens/CustomisedList1.PNG" width=250 height=500>
   
+  ### Phase3:  
+  ***
+  I have extended this app to download data from multiple feeds by adding menu options.   
+  **Screen:**  
+  <img src="https://github.com/Sarthak99/Android/blob/master/TopAppRecommender/screens/Screenshot_1595955080.png" width=250 height=500>   <img src="https://github.com/Sarthak99/Android/blob/master/TopAppRecommender/screens/Screenshot_1595955172.png" width=250 height=500>   <img src="https://github.com/Sarthak99/Android/blob/master/TopAppRecommender/screens/Screenshot_1595955205.png" width=250 height=500>    
 
-`ReadMe Build to be completed`  
-<img src = "http://horticulture.tg.nic.in/img/work-in-progress-wip.jpg" width=220 height=200>
